@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import com.example.exam_android.database.DBHelper;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText edName;
@@ -64,6 +67,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if (edQuantity.getText().toString().isEmpty()) {
             Toast.makeText(this, "Please enter Quantity product", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        String regex = "[0-9]+";
+
+        Pattern p = Pattern.compile(regex);
+
+        Matcher m = p.matcher(edQuantity.getText().toString());
+
+        if (m.matches() == false) {
+            Toast.makeText(this, "Quantity product only number", Toast.LENGTH_LONG).show();
             return;
         }
 
