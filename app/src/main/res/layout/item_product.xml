@@ -12,14 +12,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvId"
         android:text="1"
-        android:layout_weight="5"/>
+        android:layout_weight="10"/>
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Name"
         android:id="@+id/tvName"
-        android:layout_weight="75"/>
+        android:layout_weight="70"/>
 
     <TextView
         android:layout_width="0dp"
